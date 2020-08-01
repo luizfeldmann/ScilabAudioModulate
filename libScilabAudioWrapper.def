@@ -1,0 +1,55 @@
+EXPORTS
+    Capture @1
+    CloseCapture @2
+    OpenCapture @3
+    Playback @4
+
+IMPORTS
+
+    portaudio_x64.dll.PaAsio_GetAvailableBufferSizes
+    portaudio_x64.dll.PaAsio_GetInputChannelName
+    portaudio_x64.dll.PaAsio_GetOutputChannelName
+    portaudio_x64.dll.PaAsio_ShowControlPanel
+    portaudio_x64.dll.PaUtil_InitializeX86PlainConverters
+    portaudio_x64.dll.PaUtil_SetDebugPrintFunction
+    portaudio_x64.dll.PaWasapi_GetDeviceDefaultFormat
+    portaudio_x64.dll.PaWasapi_GetDeviceRole
+    portaudio_x64.dll.PaWasapi_GetFramesPerHostBuffer
+    portaudio_x64.dll.PaWasapi_GetJackCount
+    portaudio_x64.dll.PaWasapi_GetJackDescription
+    portaudio_x64.dll.PaWasapi_ThreadPriorityBoost
+    portaudio_x64.dll.PaWasapi_ThreadPriorityRevert
+    portaudio_x64.dll.Pa_AbortStream
+    portaudio_x64.dll.Pa_CloseStream
+    portaudio_x64.dll.Pa_GetDefaultHostApi
+    portaudio_x64.dll.Pa_GetDefaultInputDevice
+    portaudio_x64.dll.Pa_GetDefaultOutputDevice
+    portaudio_x64.dll.Pa_GetDeviceCount
+    portaudio_x64.dll.Pa_GetDeviceInfo
+    portaudio_x64.dll.Pa_GetErrorText
+    portaudio_x64.dll.Pa_GetHostApiCount
+    portaudio_x64.dll.Pa_GetHostApiInfo
+    portaudio_x64.dll.Pa_GetLastHostErrorInfo
+    portaudio_x64.dll.Pa_GetSampleSize
+    portaudio_x64.dll.Pa_GetStreamCpuLoad
+    portaudio_x64.dll.Pa_GetStreamInfo
+    portaudio_x64.dll.Pa_GetStreamReadAvailable
+    portaudio_x64.dll.Pa_GetStreamTime
+    portaudio_x64.dll.Pa_GetStreamWriteAvailable
+    portaudio_x64.dll.Pa_GetVersion
+    portaudio_x64.dll.Pa_GetVersionText
+    portaudio_x64.dll.Pa_HostApiDeviceIndexToDeviceIndex
+    portaudio_x64.dll.Pa_HostApiTypeIdToHostApiIndex
+    portaudio_x64.dll.Pa_Initialize
+    portaudio_x64.dll.Pa_IsFormatSupported
+    portaudio_x64.dll.Pa_IsStreamActive
+    portaudio_x64.dll.Pa_IsStreamStopped
+    portaudio_x64.dll.Pa_OpenDefaultStream
+    portaudio_x64.dll.Pa_OpenStream
+    portaudio_x64.dll.Pa_ReadStream
+    portaudio_x64.dll.Pa_SetStreamFinishedCallback
+    portaudio_x64.dll.Pa_Sleep
+    portaudio_x64.dll.Pa_StartStream
+    portaudio_x64.dll.Pa_StopStream
+    portaudio_x64.dll.Pa_Terminate
+    portaudio_x64.dll.Pa_WriteStream

@@ -1,3 +1,20 @@
+// =============================================================================
+// Copyright (C) 2020  Luiz Gustavo Pfitscher e Feldmann
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+// =============================================================================
+
 clear
 
 // loads the portAudio interface library
@@ -36,36 +53,36 @@ while 1
     samples_baseband = call("Capture", numSamples_audio, 1, "i", "out", [m,n], 2, "d"); // record a few samples
     peakSampleAmplitude = max(peakSampleAmplitude, max(abs(samples_baseband))); // get the peak sample
     samples_baseband = samples_baseband ./ peakSampleAmplitude; // normalize samples below 1
-    
+
     baseband_spectrum = abs(fft(samples_baseband));
-    
+
     for i=1:numSamples_audio
         integrated_message(i) = sum(baseband_spectrum(1:i))*(1/sampleRate);
     end
-    
+
     samples_interpol = interp1(times,integrated_message,fm_time_points,'linear');
-    
+
     fm_instantaneous_phase = 2*%pi*(fm_carrier_freq*fm_time_points + fm_deltaF*samples_interpol);
     fm_signal = cos(fm_instantaneous_phase);
-    
+
     fm_spectrum = abs(fft(fm_signal));
-    
+
     // plotting
     drawlater();
     clf();
-    
+
     // plot baseband spectrum
     subplot(211);
     plot(baseband_frequencies(1:numBaseFreqPlot),baseband_spectrum(1:numBaseFreqPlot));
     h = gca();
     h.data_bounds = [0, 0; baseband_frequencies(numBaseFreqPlot), 100];
-    
+
     // plot fm spectrum
     subplot(212);
     plot(fm_freq_points, fm_spectrum(1:fm_freq_points_count) );
     h = gca();
     h.data_bounds = [fm_carrier_freq/fm_plot_range, 0; fm_carrier_freq*fm_plot_range, 1000];
-    
+
     drawnow();
 end
 

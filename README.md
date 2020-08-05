@@ -1,2 +1,4 @@
+
 # ScilabAudioModulate
- Scilab script captures audio from microphone and plots the spectrum in baseband and FM-passband
+
+Scilab script captures audio from microphone and plots the baseband, PM and FM spectrum
